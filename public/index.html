@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <title>ContadorTwitchOigreslolTiempo</title>
+
+</head>
+
+<body id="page-top">
+  <p id="demo"></p>
+
+<script>
+  var x = setInterval(function() {
+    $.ajax({
+      type: "GET",
+      url: "/restarContador",
+      dataType: 'json',
+      contentType: "application/json",
+      success:(data)=>{
+        var tiempo = data;
+        var horas = Math.floor(tiempo/3600);
+        var minutos = Math.floor(tiempo/60);
+        var seconds = Math.floor(tiempo%60);
+        document.getElementById("demo").innerHTML = horas + "Horas " + minutos + "minutos "  + seconds + "segundos";
+
+        if (tiempo < 0) {
+          clearInterval(x);
+          document.getElementById("demo").innerHTML = "EXPIRED";
+        }
+      }
+    });
+  }, 1000);
+</script>
+
+</body>
+</html>

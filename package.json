@@ -1,0 +1,19 @@
+{
+  "name": "counter",
+  "version": "1.0.0",
+  "description": "Contador de tiempo que puedo estar en stream",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sergio Andres Rojas Muñoz (https://programaconchecho.webnode.com.co/)",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.3.0-beta2",
+    "mongoose": "^5.6.8",
+    "nodemon": "^1.19.1",
+    "path": "^0.12.7"
+  }
+}
